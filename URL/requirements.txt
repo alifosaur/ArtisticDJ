@@ -1,0 +1,7 @@
+opencv-python
+mediapipe
+deepface
+pygame
+numpy
+yt-dlp
+tf-keras
