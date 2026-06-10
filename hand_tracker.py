@@ -94,13 +94,13 @@ def get_fingertip(frame):
     lm = hand.landmark
     hand_scale = _dist(lm[9], lm[0])
     pinch_dist = _dist(lm[4], lm[8])
-    is_pinched = (pinch_dist / max(1e-5, hand_scale)) < 0.15
+    is_pinched = (pinch_dist / max(1e-5, hand_scale)) < 0.25
     _was_pinched = is_pinched
 
     if _debug_frame_count % 15 == 0:
         print(f"[Hand Tracker] Hand detected! Pinch ratio: {pinch_dist / max(1e-5, hand_scale):.2f}, Pinched: {is_pinched}, Pointing: {pointing}")
 
-    if not pointing:
+    if not (pointing or is_pinched):
         _reset()
         return None, frame, False
 

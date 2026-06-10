@@ -114,7 +114,7 @@ def main():
     init_canvas(h, w)
     start_mood()
 
-    preload_music("neutral")
+    prepare_mood("neutral")
     preload_all_background()
 
     print("=" * 50)
